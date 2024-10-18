@@ -2,8 +2,8 @@ const dvdLogo = document.getElementById('dvdLogo');
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 
-let posX = Math.random() * (screenWidth - 100);
-let posY = Math.random() * (screenHeight - 50);
+let posX = Math.random() * (screenWidth - 100); // Mulai di dalam batas layar
+let posY = Math.random() * (screenHeight - 50); // Mulai di dalam batas layar
 let deltaX = 2; // Kecepatan horizontal
 let deltaY = 2; // Kecepatan vertikal
 
@@ -11,15 +11,16 @@ function moveLogo() {
     posX += deltaX;
     posY += deltaY;
 
-    // Menghitung batas untuk mantul
+    // Menghitung batas untuk pantulan
     const logoWidth = 100; // Lebar logo
     const logoHeight = 50; // Tinggi logo
+    const buffer = 5; // Jarak dari tepi layar untuk pantulan
 
     // Jika logo mencapai tepi, ubah arah
-    if (posX <= 0 || posX >= screenWidth - logoWidth) {
+    if (posX <= buffer || posX >= screenWidth - logoWidth - buffer) {
         deltaX = -deltaX;
     }
-    if (posY <= 0 || posY >= screenHeight - logoHeight) {
+    if (posY <= buffer || posY >= screenHeight - logoHeight - buffer) {
         deltaY = -deltaY;
     }
 
