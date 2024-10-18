@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dvd-logo {
+    position: absolute;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    background-color: red;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.border {
+    position: absolute;
+    background-color: white;
+}
+
+.top, .bottom {
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.left, .right {
+    top: 0;
+    bottom: 0;
+    width: 5px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
