@@ -16,29 +16,11 @@ function moveLogo() {
     const logoHeight = 50; // Tinggi logo
 
     // Jika logo mencapai tepi, ubah arah
-    if (posX <= 5 || posX >= screenWidth - logoWidth - 5) {
+    if (posX <= 0 || posX >= screenWidth - logoWidth) {
         deltaX = -deltaX;
     }
-    if (posY <= 5 || posY >= screenHeight - logoHeight - 5) {
+    if (posY <= 0 || posY >= screenHeight - logoHeight) {
         deltaY = -deltaY;
-    }
-
-    // Memastikan logo bisa menyentuh pojok
-    if (posX <= 5 && deltaX < 0) {
-        deltaX = -deltaX;
-        deltaY = (Math.random() < 0.5) ? -deltaY : deltaY; // Ganti arah vertikal secara acak
-    }
-    if (posY <= 5 && deltaY < 0) {
-        deltaY = -deltaY;
-        deltaX = (Math.random() < 0.5) ? -deltaX : deltaX; // Ganti arah horizontal secara acak
-    }
-    if (posX >= screenWidth - logoWidth - 5 && deltaX > 0) {
-        deltaX = -deltaX;
-        deltaY = (Math.random() < 0.5) ? -deltaY : deltaY; // Ganti arah vertikal secara acak
-    }
-    if (posY >= screenHeight - logoHeight - 5 && deltaY > 0) {
-        deltaY = -deltaY;
-        deltaX = (Math.random() < 0.5) ? -deltaX : deltaX; // Ganti arah horizontal secara acak
     }
 
     dvdLogo.style.left = posX + 'px';
